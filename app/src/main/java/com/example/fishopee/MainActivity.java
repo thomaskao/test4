@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button enter,signup;
+    private Button enter,signup,button;
     private EditText user,password;
     private TextView text;
     @Override
@@ -28,8 +28,9 @@ public class MainActivity extends AppCompatActivity {
         user = findViewById(R.id.edittext1);
         password = findViewById(R.id.edittext2);
         text = findViewById(R.id.text);
+        button = findViewById(R.id.button);
 
-        String username1="123",userpassword1="456";
+        String username1="766",userpassword1="456";
 
         enter.setOnClickListener(new View.OnClickListener() {
 
@@ -49,7 +50,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        button.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View view) {
+                String userinput=user.getText().toString(),passwordinput=password.getText().toString();
+
+                if((username1.equals(userinput))&&(userpassword1.equals(passwordinput))){
+                    text.setText("登入成功");
+
+
+                }
+
+
+
+            }
+        });
 
     }
 }
